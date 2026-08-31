@@ -1,0 +1,931 @@
+-------------------------------------------------------------------------------------
+-- Author: Arzate Angulo Javier Alejandro
+-- Created: 2026-06-28
+-- Description: Query en el que se insertaran los datos de prueba inicial para el sistema de venta de libros
+-------------------------------------------------------------------------------------
+--INSERT INTO cat_rol (
+--    v_name,
+--    dt_created_at,
+--    dt_updated_at,
+--    b_status
+--)
+--VALUES
+--(
+--    'Administrador',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Cliente',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--);
+--INSERT INTO tbl_user (
+--    i_id_rol,
+--    v_email,
+--    v_password,
+--    v_name,
+--    v_last_name,
+--    i_coins,
+--    dt_created_at,
+--    dt_updated_at,
+--    b_status,
+--    b_notify
+--)
+--VALUES
+--(
+--    (SELECT i_id_rol FROM cat_rol WHERE v_name = 'Administrator'),
+--    'admin@puntoycoma.com',
+--    'Admin123',
+--    'Javier',
+--    'Arzate',
+--    0,
+--    GETDATE(),
+--    GETDATE(),
+--    1,
+--    1
+--),
+--(
+--    (SELECT i_id_rol FROM cat_rol WHERE v_name = 'Customer'),
+--    'customer@puntoycoma.com',
+--    'Customer123',
+--    'Juan',
+--    'Perez',
+--    100,
+--    GETDATE(),
+--    GETDATE(),
+--    1,
+--    1
+--);
+
+--INSERT INTO cat_nationality (v_nationality)
+--VALUES
+---- América
+--('Mexican'),
+--('American'),
+--('Canadian'),
+--('Brazilian'),
+--('Argentine'),
+
+---- Europa
+--('Spanish'),
+--('French'),
+--('German'),
+--('Italian'),
+--('British');
+--INSERT INTO cat_category
+--(
+--    v_category,
+--    t_description,
+--    dt_created_at,
+--    dt_updated_at,
+--    b_status
+--)
+--VALUES
+--(
+--    'Ficción',
+--    'Obras narrativas imaginarias que presentan historias, personajes y situaciones creadas por la imaginación del autor, incluyendo novelas, cuentos y relatos de diferentes estilos.',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Ciencia Ficción y Fantasía',
+--    'Obras que exploran mundos imaginarios, futuros posibles, avances tecnológicos, magia, criaturas fantásticas y universos alternativos donde la creatividad es el elemento principal.',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Misterio y Terror',
+--    'Libros que presentan historias de suspenso, enigmas, investigaciones, crímenes y situaciones de miedo que buscan generar intriga y emoción en el lector.',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Romance',
+--    'Obras centradas en relaciones amorosas, emociones y experiencias personales que exploran los vínculos afectivos entre los personajes.',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Infantil y Juvenil',
+--    'Libros dirigidos a niños y jóvenes que fomentan la imaginación, el aprendizaje y la lectura mediante historias adaptadas a diferentes edades.',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'No Ficción',
+--    'Obras basadas en hechos reales que presentan conocimientos, investigaciones, experiencias y análisis sobre diversos temas de interés.',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Ciencia y Tecnología',
+--    'Libros relacionados con conocimientos científicos, avances tecnológicos, ingeniería, informática, medicina y descubrimientos de diferentes áreas.',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Educación',
+--    'Materiales y libros orientados al aprendizaje, formación académica, estudio de diferentes disciplinas y desarrollo de habilidades.',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Negocios y Economía',
+--    'Obras enfocadas en administración, finanzas, emprendimiento, economía, liderazgo y estrategias para el desarrollo profesional.',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Arte y Cultura',
+--    'Libros relacionados con expresiones artísticas, historia del arte, fotografía, música, diseño y manifestaciones culturales.',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Cómics y Manga',
+--    'Historietas, novelas gráficas, manga y obras ilustradas que combinan narrativa visual y escrita para contar diferentes tipos de historias.',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--);
+--INSERT INTO cat_sub_category
+--(
+--    i_id_category,
+--    v_sub_category,
+--    t_description,
+--    dt_created_at,
+--    dt_updated_at,
+--    b_status
+--)
+--VALUES
+---- Ficción
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Ficción'),
+--    'Novela contemporánea',
+--    'Obras narrativas ambientadas en contextos actuales que exploran temas y experiencias de la sociedad moderna.',
+--    GETDATE(), GETDATE(), 1
+--),
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Ficción'),
+--    'Novela clásica',
+--    'Obras literarias reconocidas por su importancia histórica y cultural dentro de la literatura.',
+--    GETDATE(), GETDATE(), 1
+--),
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Ficción'),
+--    'Cuentos',
+--    'Relatos breves de ficción que presentan historias con personajes y situaciones imaginarias.',
+--    GETDATE(), GETDATE(), 1
+--),
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Ficción'),
+--    'Sagas literarias',
+--    'Colecciones de libros relacionados por una misma historia, universo narrativo o personajes.',
+--    GETDATE(), GETDATE(), 1
+--),
+
+---- Ciencia Ficción y Fantasía
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Ciencia Ficción y Fantasía'),
+--    'Ciencia ficción espacial',
+--    'Historias relacionadas con exploración espacial, planetas, tecnología avanzada y futuros posibles.',
+--    GETDATE(), GETDATE(), 1
+--),
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Ciencia Ficción y Fantasía'),
+--    'Distopías',
+--    'Narraciones que presentan sociedades futuras con problemas políticos, sociales o tecnológicos.',
+--    GETDATE(), GETDATE(), 1
+--),
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Ciencia Ficción y Fantasía'),
+--    'Fantasía épica',
+--    'Historias con mundos imaginarios, criaturas fantásticas, magia y grandes aventuras.',
+--    GETDATE(), GETDATE(), 1
+--),
+
+---- Misterio y Terror
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Misterio y Terror'),
+--    'Thriller psicológico',
+--    'Historias de tensión y suspenso enfocadas en conflictos mentales y emocionales.',
+--    GETDATE(), GETDATE(), 1
+--),
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Misterio y Terror'),
+--    'Novela policiaca',
+--    'Obras centradas en investigaciones criminales, detectives y resolución de misterios.',
+--    GETDATE(), GETDATE(), 1
+--),
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Misterio y Terror'),
+--    'Terror sobrenatural',
+--    'Historias donde aparecen elementos paranormales, criaturas o fenómenos inexplicables.',
+--    GETDATE(), GETDATE(), 1
+--),
+
+---- Romance
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Romance'),
+--    'Romance contemporáneo',
+--    'Historias de amor ambientadas en escenarios actuales.',
+--    GETDATE(), GETDATE(), 1
+--),
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Romance'),
+--    'Romance histórico',
+--    'Relatos románticos desarrollados en diferentes épocas históricas.',
+--    GETDATE(), GETDATE(), 1
+--),
+
+---- Infantil y Juvenil
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Infantil y Juvenil'),
+--    'Cuentos infantiles',
+--    'Historias dirigidas a niños que fomentan la imaginación y aprendizaje.',
+--    GETDATE(), GETDATE(), 1
+--),
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Infantil y Juvenil'),
+--    'Literatura juvenil',
+--    'Libros dirigidos a adolescentes con temas acordes a su etapa de desarrollo.',
+--    GETDATE(), GETDATE(), 1
+--),
+
+---- No Ficción
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'No Ficción'),
+--    'Ensayos',
+--    'Textos donde el autor analiza y desarrolla ideas sobre diferentes temas.',
+--    GETDATE(), GETDATE(), 1
+--),
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'No Ficción'),
+--    'Biografías',
+--    'Historias reales sobre la vida y trayectoria de diferentes personas.',
+--    GETDATE(), GETDATE(), 1
+--),
+
+---- Ciencia y Tecnología
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Ciencia y Tecnología'),
+--    'Programación',
+--    'Libros relacionados con lenguajes de programación y desarrollo de software.',
+--    GETDATE(), GETDATE(), 1
+--),
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Ciencia y Tecnología'),
+--    'Inteligencia Artificial',
+--    'Obras relacionadas con aprendizaje automático, modelos inteligentes y automatización.',
+--    GETDATE(), GETDATE(), 1
+--),
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Ciencia y Tecnología'),
+--    'Ingeniería',
+--    'Libros enfocados en conocimientos y aplicaciones de diferentes ramas de ingeniería.',
+--    GETDATE(), GETDATE(), 1
+--),
+
+---- Educación
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Educación'),
+--    'Idiomas',
+--    'Materiales para aprender y practicar diferentes lenguas.',
+--    GETDATE(), GETDATE(), 1
+--),
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Educación'),
+--    'Libros académicos',
+--    'Material educativo utilizado para formación escolar y universitaria.',
+--    GETDATE(), GETDATE(), 1
+--),
+
+---- Negocios y Economía
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Negocios y Economía'),
+--    'Finanzas personales',
+--    'Libros sobre administración del dinero, ahorro e inversiones.',
+--    GETDATE(), GETDATE(), 1
+--),
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Negocios y Economía'),
+--    'Emprendimiento',
+--    'Obras sobre creación y administración de negocios.',
+--    GETDATE(), GETDATE(), 1
+--),
+
+---- Arte y Cultura
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Arte y Cultura'),
+--    'Fotografía',
+--    'Libros sobre técnicas fotográficas, historia e inspiración visual.',
+--    GETDATE(), GETDATE(), 1
+--),
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Arte y Cultura'),
+--    'Diseño',
+--    'Obras relacionadas con creatividad, diseño gráfico y comunicación visual.',
+--    GETDATE(), GETDATE(), 1
+--),
+
+---- Cómics y Manga
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Cómics y Manga'),
+--    'Manga',
+--    'Historietas japonesas con diferentes géneros y estilos narrativos.',
+--    GETDATE(), GETDATE(), 1
+--),
+--(
+--    (SELECT i_id_category FROM cat_category WHERE v_category = 'Cómics y Manga'),
+--    'Novela gráfica',
+--    'Historias ilustradas con una estructura narrativa similar a una novela.',
+--    GETDATE(), GETDATE(), 1
+--);
+
+--INSERT INTO cat_language
+--(
+--    v_language,
+--    dt_created_at,
+--    dt_updated_at,
+--    b_status
+--)
+--VALUES
+--(
+--    'Spanish',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'English',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'French',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'German',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Italian',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Portuguese',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Japanese',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Chinese',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Korean',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Russian',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--);
+--CREATE LOGIN app_puntoycoma
+--WITH PASSWORD = '123456';
+
+--USE DB_PuntoYComa;
+
+--CREATE USER app_puntoycoma FOR LOGIN app_puntoycoma;
+
+--ALTER ROLE db_owner ADD MEMBER app_puntoycoma;
+
+-------------------------------------------------------------------------------------
+-- INSERTS FALTANTES
+-- Author: Arzate Angulo Javier Alejandro
+-- Description: Datos de prueba restantes para el sistema de venta de libros
+-------------------------------------------------------------------------------------
+
+-- ============================================================
+-- CAT_PUBLISHER
+-- ============================================================
+
+--INSERT INTO cat_publisher
+--(
+--    v_publisher,
+--    dt_created_at,
+--    dt_updated_at,
+--    b_status
+--)
+--VALUES
+--(
+--    'Penguin Random House',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Planeta',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Editorial Anagrama',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'HarperCollins',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Alfaguara',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--);
+
+
+---- ============================================================
+---- TBL_IMAGE
+---- ============================================================
+
+--INSERT INTO tbl_image
+--(
+--    v_direction,
+--    dt_created_at,
+--    dt_updated_at,
+--    b_status
+--)
+--VALUES
+--(
+--    'images/books/cien_anos_soledad.jpg',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'images/books/1984.jpg',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'images/books/harry_potter.jpg',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'images/books/el_principito.jpg',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'images/books/don_quijote.jpg',
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--);
+
+
+---- ============================================================
+---- TBL_AUTHOR
+---- ============================================================
+
+--INSERT INTO tbl_author
+--(
+--    v_first_name,
+--    v_last_name,
+--    t_biography,
+--    d_birth,
+--    dt_created_at,
+--    dt_updated_at,
+--    i_id_nationality
+--)
+--VALUES
+--(
+--    'Gabriel',
+--    'García Márquez',
+--    'Escritor colombiano reconocido principalmente por sus obras de realismo mágico y por su influencia en la literatura latinoamericana.',
+--    '1927-03-06',
+--    GETDATE(),
+--    GETDATE(),
+--    (SELECT i_id_nationality
+--     FROM cat_nationality
+--     WHERE v_nationality = 'Colombian')
+--),
+--(
+--    'George',
+--    'Orwell',
+--    'Escritor y periodista británico conocido por sus novelas de carácter político y social.',
+--    '1903-06-25',
+--    GETDATE(),
+--    GETDATE(),
+--    (SELECT i_id_nationality
+--     FROM cat_nationality
+--     WHERE v_nationality = 'British')
+--),
+--(
+--    'J. K.',
+--    'Rowling',
+--    'Escritora británica conocida mundialmente por la serie de novelas de Harry Potter.',
+--    '1965-07-31',
+--    GETDATE(),
+--    GETDATE(),
+--    (SELECT i_id_nationality
+--     FROM cat_nationality
+--     WHERE v_nationality = 'British')
+--),
+--(
+--    'Antoine',
+--    'de Saint-Exupéry',
+--    'Escritor y aviador francés conocido por la obra El Principito.',
+--    '1900-06-29',
+--    GETDATE(),
+--    GETDATE(),
+--    (SELECT i_id_nationality
+--     FROM cat_nationality
+--     WHERE v_nationality = 'French')
+--),
+--(
+--    'Miguel',
+--    'de Cervantes',
+--    'Escritor español considerado una de las figuras más importantes de la literatura universal.',
+--    '1547-09-29',
+--    GETDATE(),
+--    GETDATE(),
+--    (SELECT i_id_nationality
+--     FROM cat_nationality
+--     WHERE v_nationality = 'Spanish')
+--);
+
+
+---- ============================================================
+---- TBL_BOOK
+---- ============================================================
+
+--INSERT INTO tbl_book
+--(
+--    v_title,
+--    v_description,
+--    i_id_author,
+--    i_id_publisher,
+--    i_id_sub_category,
+--    i_stock,
+--    i_id_pages,
+--    i_id_image,
+--    i_id_language,
+--    d_publication,
+--    m_price,
+--    dt_created_at,
+--    dt_updated_at,
+--    b_status
+--)
+--VALUES
+--(
+--    'Cien años de soledad',
+--    'Novela que narra la historia de la familia Buendía a través de varias generaciones en el pueblo ficticio de Macondo.',
+--    (SELECT i_id_author
+--     FROM tbl_author
+--     WHERE v_first_name = 'Gabriel'
+--       AND v_last_name = 'García Márquez'),
+
+--    (SELECT i_id_publisher
+--     FROM cat_publisher
+--     WHERE v_publisher = 'Penguin Random House'),
+
+--    (SELECT i_id_sub_category
+--     FROM cat_sub_category
+--     WHERE v_sub_category = 'Novela clásica'),
+
+--    15,
+--    496,
+
+--    (SELECT i_id_image
+--     FROM tbl_image
+--     WHERE v_direction = 'images/books/cien_anos_soledad.jpg'),
+
+--    (SELECT i_id_language
+--     FROM cat_language
+--     WHERE v_language = 'Spanish'),
+
+--    '1967-05-30',
+--    399.00,
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    '1984',
+--    'Novela distópica que presenta una sociedad controlada por un régimen totalitario y una constante vigilancia de sus ciudadanos.',
+--    (SELECT i_id_author
+--     FROM tbl_author
+--     WHERE v_first_name = 'George'
+--       AND v_last_name = 'Orwell'),
+
+--    (SELECT i_id_publisher
+--     FROM cat_publisher
+--     WHERE v_publisher = 'HarperCollins'),
+
+--    (SELECT i_id_sub_category
+--     FROM cat_sub_category
+--     WHERE v_sub_category = 'Distopías'),
+
+--    20,
+--    328,
+
+--    (SELECT i_id_image
+--     FROM tbl_image
+--     WHERE v_direction = 'images/books/1984.jpg'),
+
+--    (SELECT i_id_language
+--     FROM cat_language
+--     WHERE v_language = 'English'),
+
+--    '1949-06-08',
+--    299.00,
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Harry Potter y la piedra filosofal',
+--    'Primera novela de la serie Harry Potter, donde un joven descubre que pertenece al mundo mágico.',
+--    (SELECT i_id_author
+--     FROM tbl_author
+--     WHERE v_first_name = 'J. K.'
+--       AND v_last_name = 'Rowling'),
+
+--    (SELECT i_id_publisher
+--     FROM cat_publisher
+--     WHERE v_publisher = 'Salamandra'),
+
+--    (SELECT i_id_sub_category
+--     FROM cat_sub_category
+--     WHERE v_sub_category = 'Fantasía épica'),
+
+--    25,
+--    309,
+
+--    (SELECT i_id_image
+--     FROM tbl_image
+--     WHERE v_direction = 'images/books/harry_potter.jpg'),
+
+--    (SELECT i_id_language
+--     FROM cat_language
+--     WHERE v_language = 'English'),
+
+--    '1997-06-26',
+--    349.00,
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'El Principito',
+--    'Relato que presenta las experiencias de un pequeño príncipe que viaja entre diferentes planetas y conoce distintos personajes.',
+--    (SELECT i_id_author
+--     FROM tbl_author
+--     WHERE v_first_name = 'Antoine'
+--       AND v_last_name = 'de Saint-Exupéry'),
+
+--    (SELECT i_id_publisher
+--     FROM cat_publisher
+--     WHERE v_publisher = 'Alfaguara'),
+
+--    (SELECT i_id_sub_category
+--     FROM cat_sub_category
+--     WHERE v_sub_category = 'Cuentos infantiles'),
+
+--    30,
+--    96,
+
+--    (SELECT i_id_image
+--     FROM tbl_image
+--     WHERE v_direction = 'images/books/el_principito.jpg'),
+
+--    (SELECT i_id_language
+--     FROM cat_language
+--     WHERE v_language = 'Spanish'),
+
+--    '1943-04-06',
+--    199.00,
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--),
+--(
+--    'Don Quijote de la Mancha',
+--    'Obra clásica de la literatura española que narra las aventuras de Don Quijote y su escudero Sancho Panza.',
+--    (SELECT i_id_author
+--     FROM tbl_author
+--     WHERE v_first_name = 'Miguel'
+--       AND v_last_name = 'de Cervantes'),
+
+--    (SELECT i_id_publisher
+--     FROM cat_publisher
+--     WHERE v_publisher = 'Planeta'),
+
+--    (SELECT i_id_sub_category
+--     FROM cat_sub_category
+--     WHERE v_sub_category = 'Novela clásica'),
+
+--    10,
+--    1056,
+
+--    (SELECT i_id_image
+--     FROM tbl_image
+--     WHERE v_direction = 'images/books/don_quijote.jpg'),
+
+--    (SELECT i_id_language
+--     FROM cat_language
+--     WHERE v_language = 'Spanish'),
+
+--    '1605-01-16',
+--    499.00,
+--    GETDATE(),
+--    GETDATE(),
+--    1
+--);
+
+
+---- ============================================================
+---- TBL_PURCHASE
+---- ============================================================
+
+--INSERT INTO tbl_purchase
+--(
+--    i_id_user,
+--    dt_purchase_date,
+--    m_total,
+--    b_status
+--)
+--VALUES
+--(
+--    (SELECT i_id_user
+--     FROM tbl_user
+--     WHERE v_email = 'customer@puntoycoma.com'),
+
+--    GETDATE(),
+--    698.00,
+--    1
+--);
+
+
+---- ============================================================
+---- TBL_PURCHASE_DETAIL
+---- ============================================================
+
+--INSERT INTO tbl_purchase_detail
+--(
+--    i_id_purchase,
+--    i_id_book,
+--    i_quantity,
+--    m_sub_total
+--)
+--VALUES
+--(
+--    (SELECT TOP 1 i_id_purchase
+--     FROM tbl_purchase
+--     WHERE i_id_user =
+--        (SELECT i_id_user
+--         FROM tbl_user
+--         WHERE v_email = 'customer@puntoycoma.com')
+--     ORDER BY i_id_purchase DESC),
+
+--    (SELECT i_id_book
+--     FROM tbl_book
+--     WHERE v_title = 'Cien años de soledad'),
+
+--    1,
+--    399.00
+--),
+--(
+--    (SELECT TOP 1 i_id_purchase
+--     FROM tbl_purchase
+--     WHERE i_id_user =
+--        (SELECT i_id_user
+--         FROM tbl_user
+--         WHERE v_email = 'customer@puntoycoma.com')
+--     ORDER BY i_id_purchase DESC),
+
+--    (SELECT i_id_book
+--     FROM tbl_book
+--     WHERE v_title = 'El Principito'),
+
+--    1,
+--    199.00
+--),
+--(
+--    (SELECT TOP 1 i_id_purchase
+--     FROM tbl_purchase
+--     WHERE i_id_user =
+--        (SELECT i_id_user
+--         FROM tbl_user
+--         WHERE v_email = 'customer@puntoycoma.com')
+--     ORDER BY i_id_purchase DESC),
+
+--    (SELECT i_id_book
+--     FROM tbl_book
+--     WHERE v_title = '1984'),
+
+--    1,
+--    100.00
+--);
+
+
+---- ============================================================
+---- TBL_WISHLIST
+---- ============================================================
+
+--INSERT INTO tbl_wishlist
+--(
+--    i_id_user,
+--    dt_created_at,
+--    dt_updated_at
+--)
+--VALUES
+--(
+--    (SELECT i_id_user
+--     FROM tbl_user
+--     WHERE v_email = 'customer@puntoycoma.com'),
+
+--    GETDATE(),
+--    GETDATE()
+--);
+
+
+---- ============================================================
+---- TBL_WISHLIST_DETAIL
+---- ============================================================
+
+--INSERT INTO tbl_wishlist_detail
+--(
+--    i_id_wishlist,
+--    i_id_book
+--)
+--VALUES
+--(
+--    (SELECT TOP 1 i_id_wishlist
+--     FROM tbl_wishlist
+--     WHERE i_id_user =
+--        (SELECT i_id_user
+--         FROM tbl_user
+--         WHERE v_email = 'customer@puntoycoma.com')
+--     ORDER BY i_id_wishlist DESC),
+
+--    (SELECT i_id_book
+--     FROM tbl_book
+--     WHERE v_title = 'Harry Potter y la piedra filosofal')
+--),
+--(
+--    (SELECT TOP 1 i_id_wishlist
+--     FROM tbl_wishlist
+--     WHERE i_id_user =
+--        (SELECT i_id_user
+--         FROM tbl_user
+--         WHERE v_email = 'customer@puntoycoma.com')
+--     ORDER BY i_id_wishlist DESC),
+
+--    (SELECT i_id_book
+--     FROM tbl_book
+--     WHERE v_title = 'Don Quijote de la Mancha')
+--);
