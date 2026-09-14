@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import jakarta.persistence.*;
 
@@ -45,7 +46,7 @@ public class Author implements Serializable{
 	private Nationality nationality;
 	
 	@ManyToMany(mappedBy="author")
-	private List<Book> books=new ArrayList<>();
+	private Set<Book> books;
 
 	public Long getId() {
 		return id;
@@ -111,11 +112,11 @@ public class Author implements Serializable{
 		this.nationality = nationality;
 	}
 
-	public List<Book> getBooks() {
+	public Set<Book> getBooks() {
 		return books;
 	}
 
-	public void setBooks(List<Book> books) {
+	public void setBooks(Set<Book> books) {
 		this.books = books;
 	}
 

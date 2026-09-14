@@ -51,6 +51,14 @@ public class Book implements Serializable{
 	@JoinColumn(name="i_id_publisher")
 	private Publisher publisher;
 	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="i_id_language")
+	private Language language;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="i_id_sub_category")
+	private SubCategory subCategory;
+	
 	public Author getAuthors() {
 		return author;
 	}
@@ -141,6 +149,30 @@ public class Book implements Serializable{
 
 	public void setPublisher(Publisher publisher) {
 		this.publisher = publisher;
+	}
+
+	public Author getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(Author author) {
+		this.author = author;
+	}
+
+	public Language getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(Language language) {
+		this.language = language;
+	}
+
+	public SubCategory getSubCategory() {
+		return subCategory;
+	}
+
+	public void setSubCategory(SubCategory subCategory) {
+		this.subCategory = subCategory;
 	}
 	
 	

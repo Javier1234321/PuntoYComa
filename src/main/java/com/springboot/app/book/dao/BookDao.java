@@ -2,6 +2,8 @@ package com.springboot.app.book.dao;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -9,7 +11,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.springboot.app.book.models.entity.Book;
-
 
 public interface BookDao extends JpaRepository<Book,Long>{
 	@Query("""
@@ -23,7 +24,7 @@ public interface BookDao extends JpaRepository<Book,Long>{
 			OR LOWER(p.publisher) LIKE LOWER(CONCAT('%', :query,'%'))
 			OR LOWER(n.nationality) LIKE LOWER(CONCAT('%', :query,'%'))
 			""")
-	List<Book> search(@Param("query") String query);
+	Page<Book> search(@Param("query") String query,Pageable pageable);
 	
 	@Modifying
 	@Transactional
@@ -37,4 +38,6 @@ public interface BookDao extends JpaRepository<Book,Long>{
 	int updateBookStatus(
 	    @Param("id") Long id
 	);
+	
+	
 }

@@ -12,16 +12,14 @@ public class BookMapper {
         BookDTO dto = new BookDTO();
         dto.setId(book.getId());
         dto.setTitle(book.getTitle());
-        dto.setDescription(book.getDescripcion());
+        dto.setAuthorName(book.getAuthor().getFirstName()+" "+book.getAuthor().getLasttName());
         dto.setStock(book.getStock());
         dto.setPages(book.getPages());
-        dto.setPublicationDate(book.getPublicado());
+        dto.setCategory(book.getSubCategory().getCategory().getCategory());
+        dto.setSubCategory(book.getSubCategory().getSubCategory());
         dto.setPrice(book.getPrice());
-
-        dto.setAuthors(AuthorMapper.toDTO(book.getAuthors()));
-
-        dto.setPublisher(PublisherMapper.toDTO(book.getPublisher()));
-
+        dto.setPublicationDate(book.getPublicado());
+        dto.setPublisherName(book.getPublisher().getPublisher());
         return dto;
     }
 }
