@@ -1,4 +1,4 @@
-package com.springboot.app.auth.models.entity;
+package com.springboot.app.auth.entity;
 
 import java.io.Serializable;
 import java.util.Set;
@@ -10,10 +10,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
 @Table(name="cat_rol")
-public class Rol implements Serializable{
+public class RolEntity implements Serializable{
 
 	/**
 	 * 
@@ -25,35 +34,10 @@ public class Rol implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotBlank
 	@Column(name="v_name")
-	private String rol;
+	private String name;
 	
 	@OneToMany(mappedBy="rol")
-	private Set<User> user;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getRol() {
-		return rol;
-	}
-
-	public void setRol(String rol) {
-		this.rol = rol;
-	}
-
-	public Set<User> getUser() {
-		return user;
-	}
-
-	public void setUser(Set<User> user) {
-		this.user = user;
-	}
-	
-	
+	private Set<UserEntity> users;
 }

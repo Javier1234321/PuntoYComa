@@ -1,16 +1,19 @@
 package com.springboot.app.auth.dao;
 
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
-import com.springboot.app.auth.models.entity.User;
+import com.springboot.app.auth.entity.UserEntity;
 
-public interface UserDAO extends JpaRepository<User,Long>{
-	@Query("""
-			SELECT u FROM User u
-			WHERE u.email LIKE (email) AND u.password=password
-			""")
-	User findUserByEmailAndPassword(@Param("email") String email,@Param("password") String password );
+public interface UserDao extends JpaRepository<UserEntity, Long> {
+
+    @Query("""
+            SELECT u
+            FROM UserEntity u
+            JOIN FETCH u.rol
+            WHERE u.email = ?1
+            """)
+    Optional<UserEntity> findByEmail(String email);
 }

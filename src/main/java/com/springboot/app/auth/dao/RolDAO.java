@@ -1,9 +1,11 @@
 package com.springboot.app.auth.dao;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-import com.springboot.app.auth.models.entity.Rol;
+import com.springboot.app.auth.entity.RolEntity;
 
-public interface RolDAO extends JpaRepository<Rol,Long>{
+@Repository
+public interface RolDao extends CrudRepository<RolEntity,Long> {
 
 }
